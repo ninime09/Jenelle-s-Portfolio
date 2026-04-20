@@ -29,57 +29,6 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: '7',
-    slug: 'mindleaf',
-    name: 'Mindleaf',
-    tagline: 'AI 时代的知识内化工具：将文章、播客、YouTube 视频转成初学者友好的结构化笔记，支持划重点、间隔重复，把"看完就忘"变成"真的学会"。',
-    coverImage: 'https://i.postimg.cc/VNkrXFLh/mindleaf.png',
-    description: '我观察到每篇优质内容下都有人 @ 机器人「帮我总结」。但摘要不等于学会——多数人看完继续滑，AI 焦虑越积越深，却从未真正开始学习。Mindleaf 反过来做：贴一篇文章、播客或 YouTube 视频，自动生成冷静好读的笔记，支持划重点、加批注、按间隔重复复习，让「消费内容」变成「内化知识」。双语界面（EN/中）。',
-    techStack: {
-      frontend: ['Next.js 16', 'TypeScript', 'React 19', 'Plain CSS (glassmorphism)'],
-      backend: ['Next.js API Routes'],
-      database: ['Supabase (PostgreSQL + Auth + RLS)'],
-      ai: ['Claude Sonnet 4.6', 'Supadata (YouTube transcripts)']
-    },
-    ctas: [
-      { label: '一键体验', type: 'link', value: 'https://mindleaf.dev', style: 'primary' },
-      { label: 'GitHub', type: 'link', value: 'https://github.com/ninime09/mindleaf', style: 'secondary' }
-    ]
-  },
-  {
-    id: '8',
-    slug: 'cherry-docs-reviewer',
-    name: 'Cherry Docs Reviewer',
-    tagline: '一个用于审阅 Cherry Studio 文档 PR 的网页工具，支持内联批注、AI 辅助修复与 Vercel 预览集成，让文档评审像代码 review 一样顺滑。',
-    coverImage: 'https://i.postimg.cc/sX1jg6DX/doc-reviewer.png',
-    description: '面向 Cherry Studio 文档团队的 PR 审阅工具。可以直接在文档预览页面划选段落、添加批注，AI 根据批注自动生成修改建议，并一键应用。支持与 Vercel 预览部署集成 → 从 PR 触发 → 审阅 → 批注 → AI 改写 → 回推到 PR 的完整链路。',
-    techStack: {
-      frontend: ['Next.js', 'TypeScript', 'React'],
-      backend: ['Next.js API Routes'],
-      ai: ['Claude']
-    },
-    ctas: [
-      { label: '一键体验', type: 'link', value: 'https://cherry-docs-reviewer.vercel.app', style: 'primary' },
-      { label: 'GitHub', type: 'link', value: 'https://github.com/ninime09/cherry-docs-reviewer', style: 'secondary' }
-    ]
-  },
-  {
-    id: '9',
-    slug: 'product-video-skill',
-    name: 'Product Video Skill',
-    tagline: 'Claude Code 的 Cherry Studio 产品演示视频 Skill — 结合 AI 创意总监与 Remotion 动画引擎，自动生成带字幕与 motion graphics 的产品演示视频。',
-    coverImage: 'https://picsum.photos/seed/productvideo/800/600',
-    description: '一个给 Claude Code 用的 Skill 插件，专门用来生成 Cherry Studio 的产品演示视频。AI 充当创意总监，负责规划镜头、节奏、字幕；Remotion 负责把 React 组件渲染成实际的 motion graphics 视频。适合需要频繁输出产品短视频但不想每次都手动剪辑的场景。',
-    techStack: {
-      frontend: ['Remotion', 'React', 'TypeScript'],
-      ai: ['Claude']
-    },
-    ctas: [
-      { label: '演示视频', type: 'link', value: 'https://x.com/CherryStudioHQ/status/2045347529596805167?s=20', style: 'primary' },
-      { label: 'GitHub', type: 'link', value: 'https://github.com/ninime09/product-video-skill', style: 'secondary' }
-    ]
-  },
-  {
     id: '1',
     slug: 'tripflow',
     name: 'TripFlow',
