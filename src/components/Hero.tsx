@@ -1,9 +1,9 @@
 import { motion } from 'motion/react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Github } from 'lucide-react';
 
 export function Hero() {
   return (
-    <section className="relative h-[60vh] w-full flex items-center justify-center overflow-hidden">
+    <section className="relative h-[50vh] min-h-[420px] w-full flex items-center justify-center overflow-hidden">
       {/* Background with Noise & Gradient - Updated to Light Blue/Cyan theme */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#FDFEFF] via-[#F3F8FF] to-[#EAF2FF]" />
@@ -40,9 +40,21 @@ export function Hero() {
             很高兴能与您分享我的AI小工具们。Have a great one!
           </p>
 
-          <p className="text-xl md:text-m font-medium text-[#3F3F46] mb-8 tracking-wide">
-            📧email: njmay0902@163.com
-          </p>
+          <div className="flex items-center gap-4 flex-wrap">
+            <p className="text-xl md:text-m font-medium text-[#3F3F46] tracking-wide mb-0">
+              📧email: njmay0902@163.com
+            </p>
+
+            <a
+              href="https://github.com/ninime09"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-3 h-9 rounded-full bg-white/60 hover:bg-white/90 backdrop-blur-sm border border-black/10 text-[#111827] text-sm font-medium transition-all hover:scale-[1.03]"
+            >
+              <Github size={16} />
+              <span>GitHub</span>
+            </a>
+          </div>
       </motion.div>
 
       {/* Scroll Indicator */}

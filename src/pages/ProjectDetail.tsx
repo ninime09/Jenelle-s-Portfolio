@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom';
 import { projects, CTA } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, Github } from 'lucide-react';
 import { motion } from 'motion/react';
 import { useState, useEffect } from 'react';
 import { Modal } from '@/components/ui/Modal';
@@ -83,16 +83,21 @@ export default function ProjectDetail() {
 
         {/* CTAs */}
         <div className="flex flex-wrap gap-4 mb-16">
-          {project.ctas.map((cta, index) => (
-            <Button
-              key={index}
-              variant={cta.style === 'primary' ? 'primary' : 'secondary'}
-              size="lg"
-              onClick={() => handleCtaClick(cta)}
-            >
-              {cta.label}
-            </Button>
-          ))}
+          {project.ctas.map((cta, index) => {
+            const isGithub = /github/i.test(cta.label);
+            return (
+              <Button
+                key={index}
+                variant={cta.style === 'primary' ? 'primary' : 'secondary'}
+                size="lg"
+                onClick={() => handleCtaClick(cta)}
+                className="gap-2"
+              >
+                {isGithub && <Github size={18} />}
+                {cta.label}
+              </Button>
+            );
+          })}
         </div>
 
         {/* Description */}

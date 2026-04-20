@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { useNavigate } from 'react-router-dom';
+import { Github } from 'lucide-react';
 import { Project, CTA } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
 import { Modal } from '@/components/ui/Modal';
@@ -37,7 +38,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         whileHover={{ y: -8, scale: 1.01 }}
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
         onClick={() => navigate(`/projects/${project.slug}`)}
-        className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/5 border border-gray-100 cursor-pointer transition-all duration-300 flex flex-col h-full min-h-[560px]"
+        className="group relative bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:shadow-black/5 border border-gray-100 cursor-pointer transition-all duration-300 flex flex-col h-full min-h-[440px]"
       >
         {/* Cover Image */}
         <div className="aspect-[16/10] overflow-hidden bg-gray-100 relative shrink-0">
@@ -56,23 +57,27 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="flex flex-col flex-grow">
           <div className="flex-1 px-6 py-6">
             <h3 className="text-xl font-semibold text-gray-900 mb-2 tracking-tight">{project.name}</h3>
-            <p className="mt-2 text-sm leading-6 text-gray-500 whitespace-normal">{project.tagline}</p>
+            <p className="mt-2 text-sm leading-6 text-gray-500 line-clamp-3">{project.tagline}</p>
           </div>
           
           {/* CTAs */}
           <div className="px-6 pb-6 pt-2 mt-auto">
             <div className="flex flex-wrap gap-2">
-              {project.ctas.map((cta, index) => (
-                <Button
-                  key={index}
-                  variant={cta.style === 'primary' ? 'primary' : 'secondary'}
-                  size="sm"
-                  onClick={(e) => handleCtaClick(e, cta)}
-                  className="z-10"
-                >
-                  {cta.label}
-                </Button>
-              ))}
+              {project.ctas.map((cta, index) => {
+                const isGithub = /github/i.test(cta.label);
+                return (
+                  <Button
+                    key={index}
+                    variant={cta.style === 'primary' ? 'primary' : 'secondary'}
+                    size="sm"
+                    onClick={(e) => handleCtaClick(e, cta)}
+                    className="z-10 gap-1.5"
+                  >
+                    {isGithub && <Github size={14} />}
+                    {cta.label}
+                  </Button>
+                );
+              })}
             </div>
           </div>
         </div>
